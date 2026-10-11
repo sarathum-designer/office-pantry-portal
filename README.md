@@ -22,12 +22,22 @@ Full walkthrough, including auto-restart with PM2 and a Raspberry Pi option: **[
 
 ## Tech
 
-`Node.js (http, fs)` · Vanilla HTML/CSS/JS · JSON file storage
+`Node.js (http, fs)` · React 18 + Babel (loaded from a CDN) · JSON file storage
+
+## Project structure
+
+```text
+server.js      Node HTTP server and JSON API
+index.html     Page shell
+css/styles.css Styles
+js/app.jsx     React app (compiled in the browser by Babel)
+SETUP.md       Step-by-step office setup guide
+```
 
 ## Configuration
 
 | Setting | Location |
 | --- | --- |
-| Pantry PIN | `PANTRY_PIN` in `index.html` (**change the default before deploying**) |
+| Pantry PIN | `PANTRY_PIN` in `js/app.jsx` (**change the default before deploying**) |
 | Port | `PORT` in `server.js` (default `3000`) |
 | Data / backup | `pantry-data.json` (created automatically) |

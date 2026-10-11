@@ -11,6 +11,10 @@ const os   = require("os");
 const PORT      = 3000;
 const DATA_FILE = path.join(__dirname, "pantry-data.json");
 const HTML_FILE = path.join(__dirname, "index.html");
+const STATIC_FILES = {
+  "/css/styles.css": "text/css; charset=utf-8",
+  "/js/app.jsx":     "text/javascript; charset=utf-8",
+};
 
 // ---------- data persistence ----------
 const DEFAULT_MENU = [
@@ -77,6 +81,17 @@ const server = http.createServer(async (req, res) => {
       return res.end(html);
     } catch {
       res.writeHead(500); return res.end("index.html not found next to server.js");
+    }
+  }
+
+  // serve the stylesheet and app script
+  if (req.method === "GET" && STATIC_FILES[url]) {
+    try {
+      const body = fs.readFileSync(path.join(__dirname, url));
+      res.writeHead(200, { "Content-Type": STATIC_FILES[url] });
+      return res.end(body);
+    } catch {
+      res.writeHead(404); return res.end("Not found");
     }
   }
 

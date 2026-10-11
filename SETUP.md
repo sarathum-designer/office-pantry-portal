@@ -32,9 +32,8 @@ You'll run a small program on **one computer** in your office. That computer's j
    - A Raspberry Pi (for an always-on, no-fuss setup)
    The pantry's own tablet/laptop also works if it's plugged in and on.
 
-2. **Two files** (you have these in the folder):
-   - `server.js`
-   - `index.html`
+2. **The project files** (you have these in the folder):
+   - `server.js`, `index.html`, and the `css/` and `js/` folders
 
 3. **Node.js** installed on the host computer (free, ~5 min install).
 
@@ -58,7 +57,7 @@ You should see something like `v22.x.x`. If you do, you're set.
 ## Step 2 — Put the files somewhere
 
 1. Make a folder, e.g. on the Desktop, called `raghav-pantry`.
-2. Copy `server.js` and `index.html` into it. Both files must be in the same folder.
+2. Copy `server.js`, `index.html` and the `css/` and `js/` folders into it, keeping the same layout.
 
 That's it. No installation. No "npm install". The server uses only Node's built-in tools.
 
@@ -149,7 +148,7 @@ A ₹3000–4000 Raspberry Pi tucked behind the pantry runs this 24/7 silently a
 ## Customizing things
 
 ### Change the pantry PIN
-Open `index.html` in any text editor (Notepad works). Near the top, find:
+Open `js/app.jsx` in any text editor (Notepad works). Near the top, find:
 ```js
 const PANTRY_PIN = "2580";
 ```
