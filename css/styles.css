@@ -1,0 +1,13 @@
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', -apple-system, system-ui, sans-serif;
+    background: #faf5ec;
+    color: #1c1410;
+    -webkit-font-smoothing: antialiased;
+  }
+  button { font-family: inherit; }
+  input { font-family: inherit; }
+  @keyframes spin { to { transform: rotate(360deg) } }
+  @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes slideDown { from { transform: translate(-50%, -20px); opacity: 0 } to { transform: translate(-50%, 0); opacity: 1 } }
